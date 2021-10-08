@@ -2,9 +2,12 @@ const firstLancerOne = require("./main");
 const firstLancerTwo = require("./main");
 const firstLancerThree = require("./main");
 const firstLancerFour = require("./main");
-const firstLancerFive= require("./main");
-const firstLancerSix= require("./main");
+const firstLancerFive = require("./main");
+const firstLancerSix = require("./main");
+const firstLancerBrellan =  require("./main");
+const firstLancerCarre =  require("./main");
 
+// Simple
 const dataOne = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -151,3 +154,58 @@ const dataOne = [
       expect(result).toBe(six.result);
     });
   });
+
+  // brellan
+
+  const dataBrellan = [
+    {
+      rolls: [1,2,3,4,5], 
+      result: 0
+    },
+    {
+      rolls: [1,2,3,2,2], 
+      result: 10
+    },
+    {
+      rolls: [1,1,1,4,5], 
+      result: 12
+    },
+    {
+      rolls: [6,2,6,3,6], 
+      result: 23
+    }
+ ]
+ describe.each(dataBrellan)('Brellan,', ({rolls, result}) => {
+     it(`Score ${rolls} le resulat est ${result}`, () => {
+         const result = firstLancerBrellan.Brellan('brellan', rolls)
+         expect(result).toBe(result);
+     });
+ });
+ 
+ 
+ // carré
+ 
+ const dataCarre = [
+     {
+       rolls: [1,2,3,4,5], 
+       result: 0
+      },
+     {
+       rolls: [1,2,2,2,2], 
+       result: 9
+      },
+     {
+       rolls: [1,1,1,1,1], 
+       result: 5
+      },
+     {
+       rolls: [3,3,6,3,6], 
+       result: 0
+      }
+ ]
+ describe.each(dataCarre)('carré', ({rolls, result}) => {
+     it(`Score ${rolls} le resultat est ${result}`, () => {
+         const result = firstLancerCarre.Carre('carré', rolls)
+         expect(result).toBe(result);
+     });
+ });
