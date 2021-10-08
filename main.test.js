@@ -3,6 +3,7 @@ const firstLancerTwo = require("./main");
 const firstLancerThree = require("./main");
 const firstLancerFour = require("./main");
 const firstLancerFive= require("./main");
+const firstLancerSix= require("./main");
 
 const dataOne = [
     {
@@ -124,5 +125,29 @@ const dataOne = [
       // const result = firstLancertwo([1,2,3,4,5]);
 
       expect(result).toBe(five.result);
+    });
+  });
+  
+  const dataSix = [
+    {
+        rolls: [1, 2, 3, 4, 6],
+        result : 6,
+    },
+    {
+        rolls: [1, 1, 2, 5, 4],
+        result: 0,
+    },
+    {
+        rolls: [1, 3, 6, 2, 6],
+        result: 12,
+    }
+  ];
+
+  describe.each(dataSix)(`nombre de six `, (six) => {
+    it(`le résultat ${six.rolls} correspond à ${six.result}`, () => {
+      const result = firstLancerSix.Six(six.rolls);
+      // const result = firstLancertwo([1,2,3,4,5]);
+
+      expect(result).toBe(six.result);
     });
   });

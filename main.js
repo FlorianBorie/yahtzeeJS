@@ -22,6 +22,10 @@ module.exports ={
     Five: function firstLancerFive(rolls) {
         return this.Final(rolls, 5)
     },
+
+    Six: function firstLancerSix(rolls) {
+        return this.Final(rolls, 6)
+    },
     
     Final: function calculateNumber(rolls, value){
         let test = rolls.count(dice => dice == value);
