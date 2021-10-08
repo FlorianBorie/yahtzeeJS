@@ -19,7 +19,7 @@ const dataOne = [
 
   describe.each(dataOne)(`nombre de un `, (one) => {
     it(`le résultat ${one.rolls} correspond à ${one.result}`, () => {
-      const result = firstLancerOne(one.rolls);
+      const result = firstLancerOne.testOne(one.rolls);
       // const result = firstLancerOne([1,2,3,4,5]);
 
       expect(result).toBe(one.result);
@@ -44,7 +44,7 @@ const dataOne = [
 
   describe.each(dataTwo)(`nombre de deux `, (two) => {
     it(`le résultat ${two.rolls} correspond à ${two.result}`, () => {
-      const result = firstLancerTwo(two.rolls);
+      const result = firstLancerTwo.testTwo(two.rolls);
       // const result = firstLancertwo([1,2,3,4,5]);
 
       expect(result).toBe(two.result);

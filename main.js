@@ -1,6 +1,6 @@
 Array.prototype.count = function(predicate = obj => true) {
     return this.filter(predicate).length;
-  };
+};
 
 function firstLancerOne(rolls){
     return calculateNumber(rolls, 1)
@@ -15,5 +15,5 @@ function calculateNumber(rolls, value){
     return value * test;
 }
 
-module.exports = {firstLancerOne, firstLancerTwo}
+module.exports = firstLancerOne, firstLancerTwo
 // module.exports = firstLancerTwo;
