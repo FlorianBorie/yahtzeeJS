@@ -18,6 +18,10 @@ module.exports ={
     Four: function firstLancerFour(rolls) {
         return this.Final(rolls, 4)
     },
+
+    Five: function firstLancerFive(rolls) {
+        return this.Final(rolls, 5)
+    },
     
     Final: function calculateNumber(rolls, value){
         let test = rolls.count(dice => dice == value);
