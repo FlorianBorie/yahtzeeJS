@@ -41,27 +41,22 @@ module.exports ={
     },
 
     FinalSomme: function CalculName(rolls) {
-        return (data) => countIterations(data).some(x => x.count >= rolls);
+        return (data) => FinalCountIte(data).some(x => x.count >= rolls);
+    },
+
+    PetiteSuite: function firstLancerPetiteSuite() {
+        return (data) => ([1,2,3,4].every(i => data.includes(i))) ? 
+                                30 : 
+                                ([2,3,4,5].every(i => data.includes(i))) ? 
+                                    30 : 
+                                    ([3,4,5,6].every(i => data.includes(i))) ? 
+                                        30 : 0;
+    }, 
+
+    GrandeSuite: function firstLancerGrandeSuite() {
+        return (data) => ([1,2,3,4,5].every(i => data.includes(i))) ? 
+                                40 : 
+                                ([2,3,4,5,6].every(i => data.includes(i))) ? 
+                                    40 : 0;
     }
 }
-
-
-// Array.prototype.count = function(predicate = obj => true) {
-//     return this.filter(predicate).length;
-// };
-
-// function firstLancerOne(rolls){
-//     return calculateNumber(rolls, 1)
-// }
-
-// function firstLancerTwo(rolls) {
-//     return calculateNumber(rolls, 2)
-// }
-
-// function calculateNumber(rolls, value){
-//     let test = rolls.count(dice => dice == value);
-//     return value * test;
-// }
-
-// module.exports = firstLancerOne, firstLancerTwo
-// module.exports = firstLancerTwo;

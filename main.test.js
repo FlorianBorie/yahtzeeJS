@@ -6,6 +6,8 @@ const firstLancerFive = require("./main");
 const firstLancerSix = require("./main");
 const firstLancerBrellan =  require("./main");
 const firstLancerCarre =  require("./main");
+const firstLancerFull = require("./main");
+const firstLancerPetiteSuite = require("./main");
 
 // Simple
 const dataOne = [
@@ -209,3 +211,31 @@ const dataOne = [
          expect(result).toBe(result);
      });
  });
+
+
+// Petite suite
+ const dataPeteiteSuite = [
+  {
+    rolls: [1, 2, 3, 4, 5], 
+    result: 30
+  },
+  {
+    rolls: [2, 3, 4, 5, 5], 
+    result: 30
+  },
+  {
+    rolls: [3, 2, 3, 2, 2], 
+    result: 0
+  },
+  {
+    rolls: [1, 2, 6, 5, 5], 
+    result: 0
+  }
+]
+
+describe.each(dataPeteiteSuite)('Petite suite', ({rolls, result}) => {
+  it(`Score ${rolls} le resultat est ${result}`, () => {
+      const result = firstLancerPetiteSuite.PetiteSuite('Petite suite', rolls)
+      expect(result).toBe(result);
+  });
+});
