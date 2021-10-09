@@ -41,9 +41,9 @@ module.exports ={
     },
 
     FinalSomme: function CalculName(rolls) {
-        return (data) => FinalCountIte(data).some(x => x.count >= rolls);
+        return (data) => FinalCalcul(data).somme(x => x.count >= rolls);
     },
-
+   
     PetiteSuite: function firstLancerPetiteSuite() {
         return (data) => ([1,2,3,4].every(i => data.includes(i))) ? 
                                 30 : 

@@ -6,10 +6,8 @@ const firstLancerFive = require("./main");
 const firstLancerSix = require("./main");
 const firstLancerBrellan =  require("./main");
 const firstLancerCarre =  require("./main");
-const firstLancerFull = require("./main");
 const firstLancerPetiteSuite = require("./main");
 const firstLancerGrandeSuite = require("./main");
-const firstLancerYahtzee = require("./main");
 
 // Simple
 const dataOne = [
@@ -30,8 +28,6 @@ const dataOne = [
   describe.each(dataOne)(`nombre de un `, (one) => {
     it(`le résultat ${one.rolls} correspond à ${one.result}`, () => {
       const result = firstLancerOne.One(one.rolls);
-      // const result = firstLancerOne([1,2,3,4,5]);
-
       expect(result).toBe(one.result);
     });
   });
@@ -55,8 +51,6 @@ const dataOne = [
   describe.each(dataTwo)(`nombre de deux `, (two) => {
     it(`le résultat ${two.rolls} correspond à ${two.result}`, () => {
       const result = firstLancerTwo.Two(two.rolls);
-      // const result = firstLancertwo([1,2,3,4,5]);
-
       expect(result).toBe(two.result);
     });
   });
@@ -79,8 +73,6 @@ const dataOne = [
   describe.each(dataThree)(`nombre de trois `, (three) => {
     it(`le résultat ${three.rolls} correspond à ${three.result}`, () => {
       const result = firstLancerThree.Three(three.rolls);
-      // const result = firstLancertwo([1,2,3,4,5]);
-
       expect(result).toBe(three.result);
     });
   });
@@ -104,8 +96,6 @@ const dataOne = [
   describe.each(dataFour)(`nombre de quatre `, (four) => {
     it(`le résultat ${four.rolls} correspond à ${four.result}`, () => {
       const result = firstLancerFour.Four(four.rolls);
-      // const result = firstLancertwo([1,2,3,4,5]);
-
       expect(result).toBe(four.result);
     });
   });
@@ -129,8 +119,6 @@ const dataOne = [
   describe.each(dataFive)(`nombre de cinq `, (five) => {
     it(`le résultat ${five.rolls} correspond à ${five.result}`, () => {
       const result = firstLancerFive.Five(five.rolls);
-      // const result = firstLancertwo([1,2,3,4,5]);
-
       expect(result).toBe(five.result);
     });
   });
@@ -153,8 +141,6 @@ const dataOne = [
   describe.each(dataSix)(`nombre de six `, (six) => {
     it(`le résultat ${six.rolls} correspond à ${six.result}`, () => {
       const result = firstLancerSix.Six(six.rolls);
-      // const result = firstLancertwo([1,2,3,4,5]);
-
       expect(result).toBe(six.result);
     });
   });
@@ -213,7 +199,6 @@ const dataOne = [
          expect(result).toBe(result);
      });
  });
-
 
 // Petite suite
  const dataPeteiteSuite = [
