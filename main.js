@@ -52,11 +52,12 @@ module.exports ={
                                     ([3,4,5,6].every(i => data.includes(i))) ? 
                                         30 : 0;
     }, 
-
+        
     GrandeSuite: function firstLancerGrandeSuite() {
         return (data) => ([1,2,3,4,5].every(i => data.includes(i))) ? 
                                 40 : 
                                 ([2,3,4,5,6].every(i => data.includes(i))) ? 
                                     40 : 0;
-    }
+    },
+
 }
