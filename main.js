@@ -60,4 +60,8 @@ module.exports ={
                                     40 : 0;
     },
 
+    
+    Chance: function firstLancerChance() {
+        return this.FinalSomme((current, previous) => previous+current,0)
+    },
 }

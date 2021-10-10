@@ -8,6 +8,7 @@ const firstLancerBrellan =  require("./main");
 const firstLancerCarre =  require("./main");
 const firstLancerPetiteSuite = require("./main");
 const firstLancerGrandeSuite = require("./main");
+const firstLancerChance  = require("./main");
 
 // Simple
 const dataOne = [
@@ -25,7 +26,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataOne)(`nombre de un `, (one) => {
+  describe.each(dataOne)(`Nombre de un `, (one) => {
     it(`le résultat ${one.rolls} correspond à ${one.result}`, () => {
       const result = firstLancerOne.One(one.rolls);
       expect(result).toBe(one.result);
@@ -48,7 +49,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataTwo)(`nombre de deux `, (two) => {
+  describe.each(dataTwo)(`Nombre de deux `, (two) => {
     it(`le résultat ${two.rolls} correspond à ${two.result}`, () => {
       const result = firstLancerTwo.Two(two.rolls);
       expect(result).toBe(two.result);
@@ -70,7 +71,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataThree)(`nombre de trois `, (three) => {
+  describe.each(dataThree)(`Nombre de trois `, (three) => {
     it(`le résultat ${three.rolls} correspond à ${three.result}`, () => {
       const result = firstLancerThree.Three(three.rolls);
       expect(result).toBe(three.result);
@@ -93,7 +94,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataFour)(`nombre de quatre `, (four) => {
+  describe.each(dataFour)(`Nombre de quatre `, (four) => {
     it(`le résultat ${four.rolls} correspond à ${four.result}`, () => {
       const result = firstLancerFour.Four(four.rolls);
       expect(result).toBe(four.result);
@@ -116,7 +117,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataFive)(`nombre de cinq `, (five) => {
+  describe.each(dataFive)(`Nombre de cinq `, (five) => {
     it(`le résultat ${five.rolls} correspond à ${five.result}`, () => {
       const result = firstLancerFive.Five(five.rolls);
       expect(result).toBe(five.result);
@@ -138,7 +139,7 @@ const dataOne = [
     }
   ];
 
-  describe.each(dataSix)(`nombre de six `, (six) => {
+  describe.each(dataSix)(`Nombre de six `, (six) => {
     it(`le résultat ${six.rolls} correspond à ${six.result}`, () => {
       const result = firstLancerSix.Six(six.rolls);
       expect(result).toBe(six.result);
@@ -165,7 +166,7 @@ const dataOne = [
       result: 23
     }
  ]
- describe.each(dataBrellan)('Brellan,', ({rolls, result}) => {
+ describe.each(dataBrellan)('Brellan', ({rolls, result}) => {
      it(`Score ${rolls} le resulat est ${result}`, () => {
          const result = firstLancerBrellan.Brellan('brellan', rolls)
          expect(result).toBe(result);
@@ -193,7 +194,7 @@ const dataOne = [
        result: 0
       }
  ]
- describe.each(dataCarre)('carré', ({rolls, result}) => {
+ describe.each(dataCarre)('Carré', ({rolls, result}) => {
      it(`Score ${rolls} le resultat est ${result}`, () => {
          const result = firstLancerCarre.Carre('carré', rolls)
          expect(result).toBe(result);
@@ -250,5 +251,31 @@ describe.each(dataGrandeSuite)('Grande suite', ({rolls, result}) => {
   it(`Score ${rolls} le resultat est ${result}`, () => {
       const result = firstLancerGrandeSuite.GrandeSuite('Grande suite', rolls)
       expect(result).toBe(result);
+  });
+});
+
+// Chance
+const dataChance = [
+  {
+    rolls: [1, 2, 3, 4, 5], 
+    result: 15
+  },
+  {
+    rolls: [2, 4, 3, 6, 5], 
+    result: 20
+  },
+  {
+    rolls: [1, 2, 6, 5, 5], 
+    result: 19
+  },
+  {
+    rolls: [2, 3, 5, 6, 6], 
+    result: 22
+  }
+]
+describe.each(dataChance)('Chance', ({rolls, result}) => {
+  it(`Score ${rolls} le resultat est ${result}`, () => {
+    const result = firstLancerChance.Chance('Chance', rolls)
+    expect(result).toBe(result);
   });
 });
