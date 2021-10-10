@@ -6,12 +6,14 @@ const firstLancerFive = require("./main");
 const firstLancerSix = require("./main");
 const firstLancerBrellan =  require("./main");
 const firstLancerCarre =  require("./main");
+const firstLancerFull = require("./main");
 const firstLancerPetiteSuite = require("./main");
 const firstLancerGrandeSuite = require("./main");
-const firstLancerFull = require("./main");
 const firstLancerChance  = require("./main");
+const firstLancerYahtzee = require("./main");
 
 // Simple
+// Une
 const dataOne = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -34,7 +36,7 @@ const dataOne = [
     });
   });
 
-
+// Deux
   const dataTwo = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -57,6 +59,7 @@ const dataOne = [
     });
   });
 
+  // Trois
   const dataThree = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -79,7 +82,7 @@ const dataOne = [
     });
   });
 
-
+// Quatre
   const dataFour = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -102,7 +105,7 @@ const dataOne = [
     });
   });
 
-
+// Cinq
   const dataFive = [
     {
         rolls: [1, 2, 3, 4, 5],
@@ -124,7 +127,8 @@ const dataOne = [
       expect(result).toBe(five.result);
     });
   });
-  
+
+  // Six
   const dataSix = [
     {
         rolls: [1, 2, 3, 4, 6],
@@ -148,7 +152,6 @@ const dataOne = [
   });
 
   // brellan
-
   const dataBrellan = [
     {
       rolls: [1,2,3,4,5], 
@@ -174,9 +177,7 @@ const dataOne = [
      });
  });
  
- 
  // carré
- 
  const dataCarre = [
      {
        rolls: [1,2,3,4,5], 
@@ -199,6 +200,33 @@ const dataOne = [
      it(`Score ${rolls} le resultat est ${result}`, () => {
          const result = firstLancerCarre.Carre('carré', rolls)
          expect(result).toBe(result);
+     });
+ });
+
+ //  Full
+ const dataFull = [
+  {
+    rolls: [1, 2, 3, 4, 5],
+     result: 0
+    },
+  {
+    rolls: [3, 2, 3, 2, 2],
+    result: 25
+  },
+  {
+    rolls: [3, 6, 6, 3, 3],
+    result: 25
+  },
+  {
+    rolls: [3, 3, 6, 1, 6],
+     result: 0
+    }
+]
+
+describe.each(dataFull)('Full ', ({rolls, result}) => {
+  it(`Score ${rolls} le resultat est ${result}`, () => {
+      const result = firstLancerFull.Full('full', rolls)
+      expect(result).toBe(result);
      });
  });
 
@@ -281,29 +309,28 @@ describe.each(dataChance)('Chance', ({rolls, result}) => {
   });
 });
 
-//  Full
- const dataFull = [
+// Yahtzee
+const dataYahtzee = [
   {
-    rolls: [1, 2, 3, 4, 5],
-     result: 0
-    },
-  {
-    rolls: [3, 2, 3, 2, 2],
-    result: 25
+    rolls: [1, 1, 1, 1, 1], 
+    result: 50
   },
   {
-    rolls: [3, 6, 6, 3, 3],
-    result: 25
+    rolls: [2, 5, 5, 5, 5], 
+    result: 0
   },
   {
-    rolls: [3, 3, 6, 1, 6],
-     result: 0
-    }
+    rolls: [2, 2, 2, 2, 2], 
+    result: 50
+  },
+  {
+    rolls: [1, 2, 6, 5, 5], 
+    result: 0
+  }
 ]
-
-describe.each(dataFull)('Full ', ({rolls, result}) => {
+describe.each(dataYahtzee)('Yahtzee', ({rolls, result}) => {
   it(`Score ${rolls} le resultat est ${result}`, () => {
-      const result = firstLancerFull.Full('full', rolls)
+      const result = firstLancerYahtzee.Yahtzee('Yahtzee', rolls)
       expect(result).toBe(result);
-     });
- });
+  });
+});
