@@ -60,8 +60,19 @@ module.exports ={
                                     40 : 0;
     },
 
-    
     Chance: function firstLancerChance() {
         return this.FinalSomme((current, previous) => previous+current,0)
     },
+    
+    Full: function firstLancerFull(){
+        return (this.FinalSomme(d => d.count === 3) && (this.FinalSomme(d => d.count === 2)) ? 25 : 0 ) 
+    },
+
+    FinalCalcul :function countIteration(data) {
+        const array = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
+        data.forEach(indexDice => array[indexDice]++)
+        return Object.keys(array).map(val => { return {value: val, count: array[val]}})
+    }
+
+
 }

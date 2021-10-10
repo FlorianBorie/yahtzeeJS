@@ -8,6 +8,7 @@ const firstLancerBrellan =  require("./main");
 const firstLancerCarre =  require("./main");
 const firstLancerPetiteSuite = require("./main");
 const firstLancerGrandeSuite = require("./main");
+const firstLancerFull = require("./main");
 const firstLancerChance  = require("./main");
 
 // Simple
@@ -279,3 +280,30 @@ describe.each(dataChance)('Chance', ({rolls, result}) => {
     expect(result).toBe(result);
   });
 });
+
+//  Full
+ const dataFull = [
+  {
+    rolls: [1, 2, 3, 4, 5],
+     result: 0
+    },
+  {
+    rolls: [3, 2, 3, 2, 2],
+    result: 25
+  },
+  {
+    rolls: [3, 6, 6, 3, 3],
+    result: 25
+  },
+  {
+    rolls: [3, 3, 6, 1, 6],
+     result: 0
+    }
+]
+
+describe.each(dataFull)('Full ', ({rolls, result}) => {
+  it(`Score ${rolls} le resultat est ${result}`, () => {
+      const result = firstLancerFull.Full('full', rolls)
+      expect(result).toBe(result);
+     });
+ });
