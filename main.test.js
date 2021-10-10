@@ -233,7 +233,7 @@ describe.each(dataFull)('Full ', ({rolls, result}) => {
 // Petite suite
  const dataPeteiteSuite = [
   {
-    rolls: [1, 2, 3, 4, 5], 
+    rolls: [1, 2, 3, 4, 6], 
     result: 30
   },
   {
